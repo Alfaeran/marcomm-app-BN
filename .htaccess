@@ -1,0 +1,15 @@
+# Aktifkan Mesin Rewrite URL
+RewriteEngine On
+RewriteBase /marcomm_bn/
+
+# Blokir akses web ke direktori tooling Node & sumber CSS
+RewriteRule ^(node_modules|assets/css/src)/ - [F,L]
+RewriteRule ^(package\.json|package-lock\.json|tailwind\.config\.js)$ - [F,L]
+
+# Kondisi: Jangan terapkan aturan jika request adalah file/folder yang nyata
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Fallback ke index.html untuk React Router (SPA)
+RewriteRule ^ index.html [L]

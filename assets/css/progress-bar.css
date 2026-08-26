@@ -1,0 +1,286 @@
+/* Progress Bar Styles */
+.progress-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.progress-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.progress-percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.progress-bar-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4ade80 0%, #22c55e 100%);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 10px rgba(34, 197, 94, 0.4);
+}
+
+.progress-status {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-status i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Loading Spinner Overlay */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.spinner-overlay p {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Skeleton Loader */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+    border-radius: 4px;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 60%;
+    margin-bottom: 12px;
+}
+
+.skeleton-card {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Upload Progress Indicator */
+.upload-progress {
+    position: relative;
+    margin-top: 10px;
+}
+
+.upload-file-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.upload-file-icon {
+    font-size: 2rem;
+    color: #3b82f6;
+}
+
+.upload-file-details {
+    flex: 1;
+}
+
+.upload-file-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.upload-file-size {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.upload-speed {
+    font-size: 0.85rem;
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+/* Pulse Animation for Loading */
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Success Animation */
+.success-checkmark {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.success-checkmark .check-icon {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid #4ade80;
+}
+
+.success-checkmark .check-icon::before {
+    top: 3px;
+    left: -2px;
+    width: 30px;
+    transform-origin: 100% 50%;
+    border-radius: 100px 0 0 100px;
+}
+
+.success-checkmark .check-icon::after {
+    top: 0;
+    left: 30px;
+    width: 60px;
+    transform-origin: 0 50%;
+    border-radius: 0 100px 100px 0;
+    animation: rotate-circle 4.25s ease-in;
+}
+
+.success-checkmark .check-icon::before,
+.success-checkmark .check-icon::after {
+    content: '';
+    height: 100px;
+    position: absolute;
+    background: #fff;
+    transform: rotate(-45deg);
+}
+
+.success-checkmark .icon-line {
+    height: 5px;
+    background-color: #4ade80;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+}
+
+.success-checkmark .icon-line.line-tip {
+    top: 46px;
+    left: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+    animation: icon-line-tip 0.75s;
+}
+
+.success-checkmark .icon-line.line-long {
+    top: 38px;
+    right: 8px;
+    width: 47px;
+    transform: rotate(-45deg);
+    animation: icon-line-long 0.75s;
+}
+
+@keyframes rotate-circle {
+    0% { transform: rotate(-45deg); }
+    5% { transform: rotate(-45deg); }
+    12% { transform: rotate(-405deg); }
+    100% { transform: rotate(-405deg); }
+}
+
+@keyframes icon-line-tip {
+    0% { width: 0; left: 1px; top: 19px; }
+    54% { width: 0; left: 1px; top: 19px; }
+    70% { width: 50px; left: -8px; top: 37px; }
+    84% { width: 17px; left: 21px; top: 48px; }
+    100% { width: 25px; left: 14px; top: 45px; }
+}
+
+@keyframes icon-line-long {
+    0% { width: 0; right: 46px; top: 54px; }
+    65% { width: 0; right: 46px; top: 54px; }
+    84% { width: 55px; right: 0px; top: 35px; }
+    100% { width: 47px; right: 8px; top: 38px; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .progress-container {
+        padding: 15px;
+    }
+    
+    .progress-title {
+        font-size: 1rem;
+    }
+    
+    .progress-percentage {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "name": "your-vendor-name/marcomm-apps",
+    "description": "Aplikasi Manajemen Event Marcomm.",
+    "type": "project",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.23",
+        "ramsey/uuid": "^4.2"
+    },
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "you@example.com"
+        }
+    ]
+}

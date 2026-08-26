@@ -1,0 +1,20 @@
+# Dependencies — reproducible from the committed lockfiles.
+/node_modules/
+/vendor/
+
+# Runtime data: uploaded photos, import scratch space, PHP error log.
+/uploads/*
+!/uploads/.gitkeep
+/temp_uploads/
+/logs/
+*.log
+
+# Build output of `npm run build:css`. Regenerate, do not commit.
+/assets/css/tailwind.css
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
